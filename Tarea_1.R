@@ -7,13 +7,17 @@ fc<-function(c)
   return (s)
 }
 
+#Se encuentra el valor de la raiz de la ecuacion 
+valor=uniroot(fc,lower=-1,upper = 20)
+valor=valor["root"]
+
 #Se piden datos 
 particion=as.numeric(readline("Ingrese el numero de particiones: "))
 a=as.double(readline('Introduzca el primer valor: '));
 b=as.double(readline('Introduzca el segundo valor: '));
 
-#Se muestra la grafica de la función
-plot(fc, xlim=c(as.numeric(a),as.numeric(b)), type="l", col="green", lwd=2, main="Función del paracaidista", ylim=c(-5, 100)) 
+#Se muestra la grafica de la funciÃ³n
+plot(fc, xlim=c(as.numeric(a),as.numeric(b)), type="l", col="green", lwd=2, main="FunciÃ³n del paracaidista", ylim=c(-5, 100)) 
 points(valor,fc(as.numeric(valor)),col="red", pch=19)
 abline(h=0, lty=3, col="dark grey")
 
@@ -86,8 +90,6 @@ if (fc(copA)*fc(copB)<=0)
   
 }
 
-#Se encuentra el valor de la raiz de la ecuacion y se imprime lo obtenido
-valor=uniroot(fc,lower=-1,upper = 20)
-valor=valor["root"]
+#Se imprime lo obtenido
 cat("\nValor de la raiz: ",format(valor,nsmall = 8))
 

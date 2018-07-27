@@ -90,6 +90,6 @@ if (fc(copA)*fc(copB)<=0)
   
 }
 
-#Se imprime lo obtenido
+#Se imprime el valor de la raiz
 cat("\nValor de la raiz: ",format(valor,nsmall = 8))
 

@@ -77,6 +77,8 @@ if (fc(copA)*fc(copB)<=0)
       }
       i=i+1
     }
+    cont=cont+1
+      cat("\n ",format(a,nsmall = 20),"-",format(b,nsmall = 20))
   }
   
   #Se muestra el resultado obtenido con la particion
@@ -91,5 +93,7 @@ if (fc(copA)*fc(copB)<=0)
 }
 
 #Se imprime el valor de la raiz
-cat("\nValor de la raiz: ",format(valor,nsmall = 8))
+#cat("\nValor de la raiz: ",format(valor,nsmall = 8))
 
+
+cat("\nIteraciones: ",cont)

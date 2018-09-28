@@ -15,8 +15,18 @@ area<- function(a,b,d) {
   dx<-c()
   dx[1:length(vy)]<-d
   q<-dx*vy
+
   resul<-sum(q)
+  draw(a,b,d)
+  
   return(resul)
+}
+
+draw<-function(a,b,d)
+{
+  cord.x <- c(a,seq(a,b,d),1) 
+  cord.y <- c(0,dnorm(seq(a,b,d)),0) 
+  polygon(cord.x,cord.y,col='skyblue')
 }
 
 Z<-function(x)
@@ -51,8 +61,11 @@ tabla<-function(a,b)
     {
       cat(toString(format(round(Z(cont[i]),5),nsmall = 5)),"\t")
     }
+    
+    
   }
 }
+
 curve(z,xlim = c(-4,4),ylim=c(0,0.4))
 area(-1,1,0.1)
 tabla(0,1)
